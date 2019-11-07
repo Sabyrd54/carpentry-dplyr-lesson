@@ -26,8 +26,13 @@ select(metadata, sample,clade, cit,genome_size)
 filter(metadata, clade=="plus")
 
 metadata %>%
-  filter(clade == "Cit+")
-  
+  filter(clade == "Cit+") %>%
+  select(sample,generation,cit)
 
-filter(metadata, clade == "Cit+")
+#Practice Mutate
 
+metadata %>%
+  mutate(genome_bp = genome_size * 1e6) %>%
+  head
+ 
+       
